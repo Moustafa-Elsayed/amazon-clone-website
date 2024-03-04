@@ -38,7 +38,7 @@ const Header = () => {
           </span>
         </div>
         {/* sign in */}
-        <div className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
+        <div className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1">
           <p>Hello , sign in</p>
           <p className="flex justify-between items-center font-bold  text-white">
             Account , lists
@@ -46,17 +46,17 @@ const Header = () => {
           </p>
         </div>
         {/* favorite  */}
-        <div className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
+        <div className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1">
           <p>Marked</p>
           <p className=" font-bold  text-white">
             & favorite
           </p>
         </div>
         {/* cart */}
-        <div className="  px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1 relative">
+        <div className="  px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1 relative">
           <Image src={cartImage} alt="cartIamge" className="w-auto h-8 object-cover "/>
-          <p className="text-white font-bold ">Cart</p>
-          <span className="absolute text-amazon_yellow top-0 left-[29px]">0</span>
+          <p className="text-white font-bold text-sm">Cart</p>
+          <span className="absolute text-amazon_yellow top-2 left-[29px] text-xs">0</span>
         </div>
       </div>
     </div>
