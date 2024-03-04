@@ -55,7 +55,7 @@ const Header = () => {
         {/* cart */}
         <div className="  px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1 relative">
           <Image src={cartImage} alt="cartIamge" className="w-auto h-8 object-cover "/>
-          <p className="text-white font-bold text-sm font-semibold">Cart</p>
+          <p className="text-white  text-sm font-semibold">Cart</p>
           <span className="absolute text-amazon_yellow top-2 left-[29px] text-xs">0</span>
         </div>
       </div>
