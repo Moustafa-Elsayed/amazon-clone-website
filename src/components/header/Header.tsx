@@ -7,7 +7,7 @@ import { BiCaretDown } from "react-icons/bi";
 
 const Header = () => {
   return (
-    <div className="w-full h-20 bg-amazon_blue sticky top-0 z-50">
+    <div className="w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50">
       <div className="w-full h-full mx-auto inline-flex justify-between items-center gap-1 mdl:gap-4 px-4">
         {/* logo */}
         <div className="px-2 border border-transparent hover:border-white flex items-center justify-center h-[70%] duration-300 cursor-pointer">
@@ -21,7 +21,7 @@ const Header = () => {
         <div className="px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
           <SlLocationPin className="text-white" />
           <div className="text-sm">
-            <p className="text-white">Dilver to</p>
+            <p >Dilver to</p>
             <p className="text-white font-bold uppercase">usa</p>
           </div>
         </div>
@@ -37,9 +37,9 @@ const Header = () => {
           </span>
         </div>
         {/* sign in */}
-        <div className=" text-white text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
+        <div className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
           <p>Hello,sign in</p>
-          <p className="flex justify-between items-center font-bold">
+          <p className="flex justify-between items-center font-bold  text-white">
             Account,lists
             <BiCaretDown />
             </p>
