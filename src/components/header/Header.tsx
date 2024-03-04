@@ -16,11 +16,11 @@ const Header = () => {
           />
         </div>
         {/* Dilvery */}
-        <div className="px-2 border border-transparent hover:border-white flex items-center justify-center h-[70%] duration-300 cursor-pointer">
-          <SlLocationPin />
-          <div>
-            <h1 className="text-white">df;kdjf</h1>
-            <p className="text-white">dhjfh</p>
+        <div className="px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
+          <SlLocationPin className="text-white" />
+          <div className="text-xs">
+            <p className="text-white">Dilver to</p>
+            <p className="text-white font-bold uppercase">usa</p>
           </div>
         </div>
         {/* SearchBar */}
