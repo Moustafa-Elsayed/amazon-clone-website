@@ -4,6 +4,7 @@ import Image from "next/image";
 import { SlLocationPin } from "react-icons/sl";
 import { IoIosSearch } from "react-icons/io";
 import { BiCaretDown } from "react-icons/bi";
+import cartImage from "../../images/cartIcon.png";
 
 const Header = () => {
   return (
@@ -21,7 +22,7 @@ const Header = () => {
         <div className="px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
           <SlLocationPin className="text-white" />
           <div className="text-sm">
-            <p >Dilver to</p>
+            <p>Dilver to</p>
             <p className="text-white font-bold uppercase">usa</p>
           </div>
         </div>
@@ -38,14 +39,25 @@ const Header = () => {
         </div>
         {/* sign in */}
         <div className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
-          <p>Hello,sign in</p>
+          <p>Hello , sign in</p>
           <p className="flex justify-between items-center font-bold  text-white">
-            Account,lists
+            Account , lists
             <BiCaretDown />
-            </p>
+          </p>
         </div>
         {/* favorite  */}
+        <div className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
+          <p>Marked</p>
+          <p className=" font-bold  text-white">
+            & favorite
+          </p>
+        </div>
         {/* cart */}
+        <div className="  px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1 relative">
+          <Image src={cartImage} alt="cartIamge" className="w-auto h-8 object-cover "/>
+          <p className="text-white font-bold ">Cart</p>
+          <span className="absolute text-amazon_yellow top-0 left-[29px]">0</span>
+        </div>
       </div>
     </div>
   );
