@@ -5,7 +5,6 @@ import sliderImg2 from "../images/slider/sliderImg_2.jpg";
 import sliderImg3 from "../images/slider/sliderImg_3.jpg";
 import sliderImg4 from "../images/slider/sliderImg_4.jpg";
 import Image from "next/image";
-import { FaS } from "react-icons/fa6";
 
 const Banner = () => {
   return (
