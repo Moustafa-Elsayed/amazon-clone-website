@@ -5,19 +5,20 @@ import { SlLocationPin } from "react-icons/sl";
 import { IoIosSearch } from "react-icons/io";
 import { BiCaretDown } from "react-icons/bi";
 import cartImage from "../../images/cartIcon.png";
+import Link from "next/link";
 
 const Header = () => {
   return (
     <div className="w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50">
       <div className="w-full h-full mx-auto inline-flex justify-between items-center gap-1 mdl:gap-4 px-4">
         {/* logo */}
-        <div className="px-2 border border-transparent hover:border-white flex items-center justify-center h-[70%] duration-300 cursor-pointer">
+        <Link href="/" className="px-2 border border-transparent hover:border-white flex items-center justify-center h-[70%] duration-300 cursor-pointer">
           <Image
             className="w-28 object-cover mt-1"
             src={logo}
             alt="logoImage"
           />
-        </div>
+        </Link>
         {/* Dilvery */}
         <div className="px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer hidden xl:inline-flex gap-1">
           <SlLocationPin className="text-white" />
@@ -51,7 +52,7 @@ const Header = () => {
           <p className=" font-bold  text-white">& Favorite</p>
         </div>
         {/* cart */}
-        <div className="  px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1 relative">
+        <Link href="/cart" className="  px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1 relative">
           <Image
             src={cartImage}
             alt="cartIamge"
@@ -61,7 +62,7 @@ const Header = () => {
           <span className="absolute text-amazon_yellow top-2 left-[29px] text-xs">
             0
           </span>
-        </div>
+        </Link>
       </div>
     </div>
   );
