@@ -1,12 +1,10 @@
 import Banner from "@/components/Banner";
 import Products from "@/components/Products";
-import { log } from "console";
 import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({productData}) {
-  console.log(productData);
-  
+export default function Home() {
+
   return (
     <main>
       <div className="max-w-screen mx-auto">
