@@ -41,7 +41,7 @@ const Products = ({ productData }: any) => {
               </div>
               <div className="text-gray-500">{description}</div>
               <div className="flex justify-center">
-                <button className="bg-black text-white w-[80%] p-4 rounded-md font-bold">
+                <button className="bg-black text-white w-[80%] p-4 rounded-md font-bold scale-90 hover:scale-100 duration-300 transition-transform">
                   add to cart
                 </button>
               </div>{" "}
