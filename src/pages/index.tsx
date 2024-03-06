@@ -12,7 +12,9 @@ export default function Home({ productData }: Props) {
     <main>
       <div className="max-w-screen mx-auto">
         <Banner />
-        <Products productData={productData}/>
+        <div className="relative md:-mt020 lgl:-mt-32 xl:-mt-60 z-20 mb-10">
+          <Products productData={productData} />
+        </div>
       </div>
     </main>
   );
