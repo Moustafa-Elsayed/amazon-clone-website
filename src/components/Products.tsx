@@ -1,9 +1,12 @@
 import React from "react";
 import { productProps } from "../../type";
+import Image from "next/image";
 
 const Products = ({ productData }: any) => {
+  console.log(productData);
+
   return (
-    <>
+    <div className="w-full px-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
       {productData.map(
         ({
           brand,
@@ -17,13 +20,29 @@ const Products = ({ productData }: any) => {
           _id,
         }: productProps) => {
           return (
-            <div key={_id}>
-              <h1>{title}</h1>
+            <div
+              key={_id}
+              className="w-full bg-white p-4 text-black rounded-lg border border-gray-300 group overflow-hidden  "
+            >
+              <Image
+                width={300}
+                height={300}
+                alt="productmage"
+                src={image}
+                className=""
+              />
+              <div>{category}</div>
+              <div>{title}</div>
+              <div className="flex flex-row gap-3">
+                <span className="line-through text-gray-500">{oldPrice}$</span>
+                <span>{price}$</span>
+              </div>
+              <div>{description}</div>
             </div>
           );
         }
       )}
-    </>
+    </div>
   );
 };
 
