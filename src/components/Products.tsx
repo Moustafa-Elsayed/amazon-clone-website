@@ -25,21 +25,26 @@ const Products = ({ productData }: any) => {
               className="w-full bg-white p-4 text-black rounded-lg border border-gray-300 group overflow-hidden  "
             >
               <div className="w-full object-cover scale-90 hover:scale-100 duration-300 transition-transform">
-              <Image
-                width={300}
-                height={300}
-                alt="productmage"
-                src={image}
-                className=""
-              />
+                <Image
+                  width={300}
+                  height={300}
+                  alt="productmage"
+                  src={image}
+                  className=""
+                />
               </div>
-              <div>{category}</div>
-              <div>{title}</div>
+              <div className="text-gray-500">{category}</div>
+              <div className="font-bold text-2xl">{title}</div>
               <div className="flex flex-row gap-3">
                 <span className="line-through text-gray-500">{oldPrice}$</span>
-                <span>{price}$</span>
+                <span className="font-bold">{price}$</span>
               </div>
-              <div>{description}</div>
+              <div className="text-gray-500">{description}</div>
+              <div className="flex justify-center">
+                <button className="bg-black text-white w-[80%] p-4 rounded-md font-bold">
+                  add to cart
+                </button>
+              </div>{" "}
             </div>
           );
         }
