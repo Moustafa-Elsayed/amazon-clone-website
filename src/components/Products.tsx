@@ -24,6 +24,7 @@ const Products = ({ productData }: any) => {
               key={_id}
               className="w-full bg-white p-4 text-black rounded-lg border border-gray-300 group overflow-hidden  "
             >
+              <div className="w-full object-cover scale-90 hover:scale-100 duration-300 transition-transform">
               <Image
                 width={300}
                 height={300}
@@ -31,6 +32,7 @@ const Products = ({ productData }: any) => {
                 src={image}
                 className=""
               />
+              </div>
               <div>{category}</div>
               <div>{title}</div>
               <div className="flex flex-row gap-3">
