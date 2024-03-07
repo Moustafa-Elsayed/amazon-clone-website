@@ -22,7 +22,7 @@ const Products = ({ productData }: any) => {
           return (
             <div
               key={_id}
-              className="w-full bg-white p-4 text-black rounded-lg border border-gray-300 group overflow-hidden  "
+              className="w-full  bg-white p-4 text-black rounded-lg border border-gray-300 group overflow-hidden  "
             >
               <div className="w-full object-cover scale-90 hover:scale-100 duration-300 transition-transform">
                 <Image
