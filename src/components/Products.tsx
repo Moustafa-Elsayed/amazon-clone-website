@@ -1,8 +1,8 @@
 import React from "react";
 import { productProps } from "../../type";
 import Image from "next/image";
-import { IoCartOutline } from "react-icons/io5";
-import { CiHeart } from "react-icons/ci";
+import { FaShoppingCart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 
 const Products = ({ productData }: any) => {
   console.log(productData);
@@ -24,41 +24,26 @@ const Products = ({ productData }: any) => {
           return (
             <div
               key={_id}
-              className="w-full bg-white p-4 text-black rounded-lg border border-gray-300 group  overflow-hidden  "
+              className="w-full bg-white text-black p-4 border border-gray-300 rounded-lg group overflow-hidden"
             >
-              <div className="w-full  relative">
+              <div className="w-full h-[260px] relative">
                 <Image
+                  className="w-full h-full object-cover scale-90 hover:scale-100 transition-transform duration-300"
                   width={300}
                   height={300}
-                  alt="productmage"
                   src={image}
-                  className="w-full h-full object-cover scale-90 hover:scale-100 duration-300 transition-transform"
+                  alt="productImage"
                 />
-
-                <div className="translate-x-20 group-hover:translate-x-0 transition-transform duration-300 border-[1px] border-gray-500 h-24  w-12 absolute bottom-10 right-0 flex flex-col  rounded-md ">
-                  <span className="border-b-[2px] border-gray-400 w-full h-full flex items-center justify-center text-2xl bg-transparent hover:bg-amazon_yellow duration-300 ">
-                    <IoCartOutline />
+                <div className="w-12 h-24 absolute bottom-10 right-0 border-[1px] border-gray-400 bg-white rounded-md flex flex-col translate-x-20 group-hover:translate-x-0 transition-transform duration-300">
+                  <span className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300">
+                    <FaShoppingCart />
                   </span>
-                  <span className="w-full h-full flex items-center justify-center text-2xl bg-transparent hover:bg-amazon_yellow duration-300">
-                    <CiHeart />
+                  <span className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300">
+                    <FaHeart />
                   </span>
                 </div>
               </div>
-
               <hr />
-
-              {/* <div className="text-gray-500">{category}</div>
-              <div className="font-bold text-2xl">{title}</div>
-              <div className="flex flex-row gap-3">
-                <span className="line-through text-gray-500">{oldPrice}$</span>
-                <span className="font-bold">{price}$</span>
-              </div>
-              <div className="text-gray-500">{description}</div>
-              <div className="flex justify-center">
-                <button className="bg-black text-white w-[80%] p-4 rounded-md font-bold scale-90 hover:scale-100 duration-300 transition-transform">
-                  add to cart
-                </button>
-              </div>{" "} */}
             </div>
           );
         }
