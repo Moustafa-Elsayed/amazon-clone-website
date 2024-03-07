@@ -3,8 +3,11 @@ import { productProps } from "../../type";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/store/nextSlice";
 
 const Products = ({ productData }: any) => {
+  const dispatch = useDispatch();
 
   return (
     <div className="w-full px-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
@@ -63,7 +66,25 @@ const Products = ({ productData }: any) => {
                 <p className="text-xs text-gray-600 text-justify">
                   {description.substring(0, 120)}
                 </p>
-                <button className="bg-black hover:bg-amazon_yellow hover:text-black duration-300 mt-2 text-white h-10 rounded-md font-medium">
+                <button
+                  onClick={() => {
+                    dispatch(
+                      addToCart({
+                        _id: _id,
+                        brand: brand,
+                        category: category,
+                        description: description,
+                        image: image,
+                        isNew: isNew,
+                        oldPrice: oldPrice,
+                        price: price,
+                        title: title,
+                        quantity: 1,
+                      })
+                    );
+                  }}
+                  className="bg-black hover:bg-amazon_yellow hover:text-black duration-300 mt-2 text-white h-10 rounded-md font-medium"
+                >
                   add to cart
                 </button>
               </div>
