@@ -42,6 +42,12 @@ const Products = ({ productData }: any) => {
                     <FaHeart />
                   </span>
                 </div>
+                {isNew && (
+                  <p className="absolute top-0 right-0 text-amazon_blue tracking-wide animate-bounce">
+                    !save $
+                    {!isNaN(oldPrice - price) && (oldPrice - price).toFixed(2)}
+                  </p>
+                )}
               </div>
               <hr />
             </div>
