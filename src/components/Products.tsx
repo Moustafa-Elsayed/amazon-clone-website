@@ -51,19 +51,22 @@ const Products = ({ productData }: any) => {
               </div>
               <hr />
               <div className="px-4 py-3 flex flex-col gap-1">
-              <p className="text-xs text-gray-500 tracking-wide">{category}</p>
-              <p className="text-base font-medium">{title}</p>
-              <p className="flex items-center gap-2">
-                <span className="text-sm line-through">
-                 ${oldPrice}
-                </span>
-                <span className="text-amazon_blue font-semibold">
-                 ${price}
-                </span>
-              </p>
-              <p className="text-xs text-gray-600 text-justify">
-                {description.substring(0, 120)}
-              </p>
+                <p className="text-xs text-gray-500 tracking-wide">
+                  {category}
+                </p>
+                <p className="text-base font-medium">{title}</p>
+                <p className="flex items-center gap-2">
+                  <span className="text-sm line-through">${oldPrice}</span>
+                  <span className="text-amazon_blue font-semibold">
+                    ${price}
+                  </span>
+                </p>
+                <p className="text-xs text-gray-600 text-justify">
+                  {description.substring(0, 120)}
+                </p>
+                <button className="bg-black text-white p-4 rounded-md font-bold">
+                  add to cart
+                </button>
               </div>
             </div>
           );
