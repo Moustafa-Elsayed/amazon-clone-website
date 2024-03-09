@@ -21,3 +21,7 @@ export interface StoreProduct {
   _id: number;
   quantity: number;
 }
+export interface Metadata {
+  title: string,
+  description: string,
+}
