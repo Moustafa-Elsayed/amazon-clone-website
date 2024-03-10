@@ -68,6 +68,7 @@ const Header = () => {
             </span>
           )}
         </Link>
+
         {/* cart */}
         <Link
           href={"/cart"}
@@ -79,9 +80,11 @@ const Header = () => {
             alt="cartImg"
           />
           <p className="text-xs text-white font-bold mt-3">Cart</p>
-          <span className="absolute text-amazon_yellow text-sm top-2 left-[29px] font-semibold">
-            {productData ? productData.length : 0}
-          </span>
+          {productData && productData.length > 0 && (
+            <span className="absolute text-amazon_yellow text-sm top-2 left-[29px] font-semibold">
+              {productData.length}
+            </span>
+          )}
         </Link>
       </div>
     </div>

@@ -1,20 +1,22 @@
-import Head from "next/head";
 import React from "react";
+import { useSelector } from "react-redux";
+import { StoreProduct, stateProps } from "../../type";
 
 const Cart = () => {
+  const { productData, favoriteData } = useSelector(
+    (state: stateProps) => state.next
+  );
+  console.log(productData);
+
   return (
     <>
-      <Head>
-        <title>Cart</title>
-        <meta
-          name="description"
-          content="Super product with free shipping."
-          key="desc"
-        />
-      </Head>
-      <div className="text-orange">Cart</div>;
+      
+      <div className="text-orange">Cart</div>
+      {productData.map((items: StoreProduct) => (
+        <p key={items._id}>{items.title}</p>
+      ))}
     </>
-  );
+  )
 };
 
 export default Cart;
