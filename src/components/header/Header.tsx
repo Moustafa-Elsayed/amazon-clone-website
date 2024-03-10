@@ -75,7 +75,7 @@ const Header = () => {
           />
           <p className="text-xs text-white font-bold mt-3">Cart</p>
           <span className="absolute text-amazon_yellow text-sm top-2 left-[29px] font-semibold">
-            0
+          {productData ? productData.length : 0}
           </span>
         </Link>
       </div>
