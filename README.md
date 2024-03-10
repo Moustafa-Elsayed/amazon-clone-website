@@ -1,13 +1,13 @@
 <h1 align="center">Amazon Clone  WebSite</h1>
-<P>This is a Portfolio Responsive Webpage built with NextJs,Tailwind,Materila ui, Resend Email JS</P>
-<p align="center"><img src="https://i.ibb.co/XLpYPk2/portflio.png" alt="project"></p>
+<P>This is a Portfolio Responsive Webpage built with NextJs,Tailwind,Redux Toolkit,Redux persist</P>
+<p align="center"><img src="https://ibb.co/G2WbdYp" alt="project"></p>
 
 <h2>🚀 Demo</h2>
 
 https://amazon-clone-git-master-moustafa-elsayeds-projects.vercel.app/
 <h2>Project Screenshots:</h2>
 
-<img src="https://i.ibb.co/Jt6CvR4/portflio1.png" alt="shields" width="800" height="400&quot;/">
+<img src="https://ibb.co/G2WbdYp" alt="shields" width="800" height="400&quot;/">
 
 
 <h2>🛠️ Installation Steps:</h2>
