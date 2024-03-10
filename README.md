@@ -1,40 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Portfolio WebSite</h1>
+<P>This is a Portfolio Responsive Webpage built with NextJs,Tailwind,Materila ui, Resend Email JS</P>
+<p align="center"><img src="https://i.ibb.co/XLpYPk2/portflio.png" alt="project"></p>
 
-## Getting Started
+<h2>🚀 Demo</h2>
 
-First, run the development server:
+https://moustafa-elsayed-portoflio.vercel.app/
+<h2>Project Screenshots:</h2>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<img src="https://i.ibb.co/Jt6CvR4/portflio1.png" alt="shields" width="800" height="400&quot;/">
+
+
+<h2>🛠️ Installation Steps:</h2>
+
+<p>1. Clone the repository</p>
+
+```
+git clone https://github.com/Moustafa-Elsayed/personal-portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p>2. Install npm modules</p>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+yarn install
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<p>3. Start development server using below command</p>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<p>4. Create production build using below command</p>
 
-## Learn More
+```
+yarn build
+```
 
-To learn more about Next.js, take a look at the following resources:
+<p>5. Check production build locally using below command</p>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+yarn start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  
+  
+<h2>💻 Built with</h2>
 
-## Deploy on Vercel
+Technologies used in the project:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+*  [Next.js](https://nextjs.org/)
+*  [React Js](https://react.dev/learn) 
+*  [TailwindCSS](https://tailwindcss.com/)  
+*  [Materila ui](https://mui.com/material-ui/getting-started/) 
+*  [Resend Email ](https://resend.com/emails/69382737-8835-4c5a-a6ed-12f5b160910c)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+
+
+<h2>🛡️ Authors:</h2>
+<div align="left">
+  <a href="https://www.linkedin.com/in/mostafa-hashem-1b43822b9/"><img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/linkedin/default.svg" width="52" height="40" alt="linkedin logo" /></a>
+ <a href="https://wa.me/201002602130"><img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/whatsapp/default.svg" width="52" height="40" alt="whatsapp logo" /></a>
+  <a href="https://t.me/01002602130"><img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/telegram/default.svg" width="52" height="40" alt="telegram logo" /></a>
+  <a href="mailto:moelsayed949@gmail.com"><img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/gmail/default.svg" width="52" height="40" alt="Gmail logo" /></a>
+
+</div>
+
+<h2> Contributing:</h2>
+* Contributions, issues and feature requests are welcome!
+
+
+<h2>💖Like my work?</h2>
+
+This project needs a ⭐️ from you. Don't forget to leave a star ⭐️.   
+If you found the app helpful consider supporting me 
+[Moustafa Elsayed](https://github.com/Moustafa-Elsayed)
