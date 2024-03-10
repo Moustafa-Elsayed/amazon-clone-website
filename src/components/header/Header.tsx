@@ -62,13 +62,7 @@ const Header = () => {
         >
           <p>Marked</p>
           <p className="text-white font-bold">& Favorite</p>
-          {favoriteData.length > 0 && (
-            <span className="absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex items-center justify-center text-xs text-amazon_yellow">
-              {favoriteData.length}
-            </span>
-          )}
         </Link>
-
         {/* cart */}
         <Link
           href={"/cart"}
@@ -80,11 +74,9 @@ const Header = () => {
             alt="cartImg"
           />
           <p className="text-xs text-white font-bold mt-3">Cart</p>
-          {productData && productData.length > 0 && (
-            <span className="absolute text-amazon_yellow text-sm top-2 left-[29px] font-semibold">
-              {productData.length}
-            </span>
-          )}
+          <span className="absolute text-amazon_yellow text-sm top-2 left-[29px] font-semibold">
+            0
+          </span>
         </Link>
       </div>
     </div>
