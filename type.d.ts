@@ -25,3 +25,10 @@ export interface Metadata {
   title: string,
   description: string,
 }
+export interface stateProps {
+  productData: [],
+  favoriteData: [],
+  allProducts: [],
+  userInfo: null | string,
+  next:any
+}
