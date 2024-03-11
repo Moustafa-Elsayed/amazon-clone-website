@@ -10,7 +10,8 @@ const Cart = () => {
 
   useEffect(() => {
     setHydrationLoad(false);
-  }, []);  return (
+  }, []);
+  return (
     <>
       <div className="text-orange">Cart</div>
       {hydrationLoad ? (
