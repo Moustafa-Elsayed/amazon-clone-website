@@ -27,7 +27,7 @@ interface cartProductsProps {
 const CartProduct = ({ item }: cartProductsProps) => {
   const dispatch = useDispatch();
   return (
-    <div className="bg-gray-100 rounded-lg flex items-center gap-4 relative">
+    <div className="bg-gray-100 rounded-lg  flex flex-col md:flex-row items-center gap-4 relative">
       <Image
         className="object-cover"
         width={150}
