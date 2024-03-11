@@ -13,15 +13,21 @@ const Cart = () => {
   }, []);
   return (
     <>
-      <div className="text-orange">Cart</div>
       {hydrationLoad ? (
         <> loading</>
       ) : (
-        <>
-          {productData.map((items: StoreProduct) => (
-            <p key={items._id}>{items.title}</p>
-          ))}
-        </>
+        <div className="max-w-screen-2xl mx-auto py-6 grid grid-cols-5 gap-10">
+          <div className="bg-white col-span-4 p-4 rounded-lg">
+            <div className="flex item-center justify-between border-b-[1px] border-b-gray-400 pb-1  ">
+              <p className="text-amazon_blue text-2xl font-semibold">
+                Shoping Cart
+              </p>
+              <p className="text-amazon_blue text-2xl font-semibold">
+                Subtitle
+              </p>
+            </div>
+          </div>
+        </div>
       )}
     </>
   );
