@@ -8,7 +8,7 @@ import cartImage from "../../images/cartIcon.png";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { stateProps } from "../../../type";
-import { DiVim } from "react-icons/di";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Header = () => {
   const { productData, favoriteData } = useSelector(
