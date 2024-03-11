@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { StoreProduct, stateProps } from "../../type";
 
@@ -6,17 +6,24 @@ const Cart = () => {
   const { productData, favoriteData } = useSelector(
     (state: stateProps) => state.next
   );
-  console.log(productData);
+  const [hydrationLoad, setHydrationLoad] = useState(true);
 
-  return (
+  useEffect(() => {
+    setHydrationLoad(false);
+  }, []);  return (
     <>
-      
       <div className="text-orange">Cart</div>
-      {productData.map((items: StoreProduct) => (
-        <p key={items._id}>{items.title}</p>
-      ))}
+      {hydrationLoad ? (
+        <> loading</>
+      ) : (
+        <>
+          {productData.map((items: StoreProduct) => (
+            <p key={items._id}>{items.title}</p>
+          ))}
+        </>
+      )}
     </>
-  )
+  );
 };
 
 export default Cart;
