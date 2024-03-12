@@ -98,7 +98,9 @@ const Header = () => {
           className="text-xs text-gray-100 flex flex-col justify-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
         >
           <p>Marked</p>
-          <p className= "text-xs md:text-base text-white font-bold">& Favorite</p>
+          <p className="text-xs md:text-base text-white font-bold">
+            & Favorite
+          </p>
 
           <>
             {favoriteData.length > 0 && (
