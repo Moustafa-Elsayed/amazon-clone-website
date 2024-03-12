@@ -8,8 +8,11 @@ import cartImage from "../../images/cartIcon.png";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { stateProps } from "../../../type";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 const Header = () => {
+  const { data: session, status } = useSession();
+
   const { productData, favoriteData } = useSelector(
     (state: stateProps) => state.next
   );
@@ -52,7 +55,7 @@ const Header = () => {
           </span>
         </div>
         {/* sign in */}
-        <div className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1">
+        <div onClick={() => signIn()} className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1">
           <p>Hello , Sign in</p>
           <p className="flex justify-between items-center font-bold  text-white">
             Account , Lists

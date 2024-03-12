@@ -1,5 +1,6 @@
 import React from "react";
 import { MdOutlineMenu } from "react-icons/md";
+import { signOut } from "next-auth/react";
 
 const BottomHeader = () => {
   return (
@@ -23,7 +24,7 @@ const BottomHeader = () => {
       <p className="  hidden cursor-pointer md:inline-flex items-center px-2 gap-1 h-8 border border-transparent hover:border-white duration-300">
         Sell
       </p>
-      <p className="  hidden cursor-pointer md:inline-flex text-amazon_yellow items-center px-2 gap-1 h-8 border border-transparent hover:border-amazon_yellow duration-300">
+      <p  onClick={() => signOut()} className="  hidden cursor-pointer md:inline-flex text-amazon_yellow items-center px-2 gap-1 h-8 border border-transparent hover:border-amazon_yellow duration-300">
         Sign Out
       </p>
     </div>
