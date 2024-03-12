@@ -6,14 +6,16 @@ import { IoIosSearch } from "react-icons/io";
 import { BiCaretDown } from "react-icons/bi";
 import cartImage from "../../images/cartIcon.png";
 import Link from "next/link";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { stateProps } from "../../../type";
 import { useSession, signIn } from "next-auth/react";
+import { addUser } from "@/store/nextSlice";
 
 const Header = () => {
   const { data: session, status } = useSession();
+  const [allData, setAllData] = useState([]);
 
-  const { productData, favoriteData } = useSelector(
+  const { productData, favoriteData, userInfo, allProducts } = useSelector(
     (state: stateProps) => state.next
   );
   const [hydrationLoad, setHydrationLoad] = useState(true);
@@ -21,6 +23,21 @@ const Header = () => {
   useEffect(() => {
     setHydrationLoad(false);
   }, []);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    setAllData(allProducts.allProducts);
+  }, [allProducts]);
+  useEffect(() => {
+    if (session) {
+      dispatch(
+        addUser({
+          name: session?.user?.name,
+          email: session?.user?.email,
+          image: session?.user?.image,
+        })
+      );
+    }
+  }, [session]);
   return (
     <div className="w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50">
       <div className="w-full h-full mx-auto inline-flex justify-between items-center gap-1 mdl:gap-4 px-4">
