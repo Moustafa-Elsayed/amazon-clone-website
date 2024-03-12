@@ -8,7 +8,7 @@ import cartImage from "../../images/cartIcon.png";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { stateProps } from "../../../type";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn } from "next-auth/react";
 
 const Header = () => {
   const { data: session, status } = useSession();
