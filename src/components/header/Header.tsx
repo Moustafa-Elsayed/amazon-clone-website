@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+"use client";
 import React, { useEffect, useState } from "react";
 import logo from "../../images/logo.png";
 import Image from "next/image";
@@ -12,17 +14,11 @@ import { useSession, signIn } from "next-auth/react";
 import { addUser } from "@/store/nextSlice";
 
 const Header = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const [allData, setAllData] = useState([]);
-
   const { productData, favoriteData, userInfo, allProducts } = useSelector(
     (state: stateProps) => state.next
   );
-  const [hydrationLoad, setHydrationLoad] = useState(true);
-
-  useEffect(() => {
-    setHydrationLoad(false);
-  }, []);
   const dispatch = useDispatch();
   useEffect(() => {
     setAllData(allProducts.allProducts);
@@ -72,31 +68,45 @@ const Header = () => {
           </span>
         </div>
         {/* sign in */}
-        <div onClick={() => signIn()} className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1">
-          <p>Hello , Sign in</p>
-          <p className="flex justify-between items-center font-bold  text-white">
-            Account , Lists
-            <BiCaretDown />
-          </p>
-        </div>
+        {userInfo ? (
+          <div className=" text-xs  px-2 border border-transparent  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1">
+            <img
+              src={userInfo.image}
+              alt="userImage"
+              className="w-8 h-8 rounded-full object-cover"
+            />
+            <p className="flex justify-between items-center font-bold  text-white">
+              {userInfo.name}
+            </p>
+          </div>
+        ) : (
+          <div
+            onClick={() => signIn()}
+            className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1"
+          >
+            <p>Hello , Sign in</p>
+            <p className="flex justify-between items-center font-bold  text-white">
+              Account , Lists
+              <BiCaretDown />
+            </p>
+          </div>
+        )}
+
         {/* favorite  */}
         <Link
           href={"/favorite"}
           className="text-xs text-gray-100 flex flex-col justify-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
         >
           <p>Marked</p>
-          <p className="text-white font-bold">& Favorite</p>
-          {hydrationLoad ? (
-            <>lodakin</>
-          ) : (
-            <>
-              {favoriteData.length > 0 && (
-                <span className="absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex items-center justify-center text-xs text-amazon_yellow">
-                  {favoriteData.length}
-                </span>
-              )}
-            </>
-          )}
+          <p className= "text-xs md:text-base text-white font-bold">& Favorite</p>
+
+          <>
+            {favoriteData.length > 0 && (
+              <span className="absolute right-2 top-2 w-4 h-4 border-[1px] border-gray-400 flex items-center justify-center text-xs text-amazon_yellow">
+                {favoriteData.length}
+              </span>
+            )}
+          </>
         </Link>
         {/* cart */}
         <Link
@@ -110,11 +120,7 @@ const Header = () => {
           />
           <p className="text-xs text-white font-bold mt-3">Cart</p>
           <span className="absolute text-amazon_yellow text-sm top-2 left-[29px] font-semibold">
-            {hydrationLoad ? (
-              <>lodakin</>
-            ) : (
-              <>{productData ? productData.length : 0}</>
-            )}
+            <>{productData ? productData.length : 0}</>
           </span>
         </Link>
       </div>
