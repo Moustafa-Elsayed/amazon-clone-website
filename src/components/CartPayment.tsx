@@ -22,7 +22,6 @@ const CartPayment = () => {
   const stripePromise = loadStripe(
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
   );
-  const { data: session } = useSession();
 
   const handleCheckout = async () => {
     const stripe = await stripePromise;
@@ -32,7 +31,7 @@ const CartPayment = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ items: productData, email: session?.user?.email }),
+      body: JSON.stringify({ items: productData}),
     });
     const checkoutSession = await response.json();
 
