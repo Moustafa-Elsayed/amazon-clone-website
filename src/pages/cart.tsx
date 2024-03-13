@@ -32,11 +32,11 @@ const Cart = () => {
                   </p>
                 </div>
                 <div className="pt-2 flex flex-col gap-2">
-                <Link href={"/"}>
-                <button className="w-44 h-10 font-semibold bg-gray-200 rounded-lg hover:bg-red-600 hover:text-white duration-300">
-                  Continue shopping
-                </button>
-              </Link>
+                  <Link href={"/"}>
+                    <button className="w-44 h-10 font-semibold bg-gray-200 rounded-lg hover:bg-red-600 hover:text-white duration-300">
+                      Continue shopping
+                    </button>
+                  </Link>
                   {productData.map((item: StoreProduct) => (
                     <div key={item._id}>
                       <CartProduct item={item} />
