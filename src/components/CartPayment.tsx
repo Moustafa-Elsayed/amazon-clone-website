@@ -56,7 +56,7 @@ const CartPayment = () => {
         </p>
       </div>
       <p className="flex items-center justify-between px-2 font-semibold">
-        Total: <span className="font-bold text-xl">= </span>
+        Total: <span className="font-bold text-xl">= {totalAmount.toFixed(2)}</span>
       </p>
       {userInfo ? (
         <div className="flex flex-col items-center">

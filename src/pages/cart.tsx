@@ -4,6 +4,7 @@ import { StoreProduct, stateProps } from "../../type";
 import Link from "next/link";
 import ResetCart from "@/components/ResetCart";
 import CartProduct from "@/components/CartProduct";
+import CartPayment from "@/components/CartPayment";
 
 const Cart = () => {
   const { productData, favoriteData } = useSelector(
@@ -46,7 +47,7 @@ const Cart = () => {
                 </div>
               </div>
               <div className="bg-white h-64 col-span-1 p-4 rounded-lg flex items-center justify-center">
-                {/* <CartPayment /> */}
+                <CartPayment />
               </div>
             </>
           ) : (
