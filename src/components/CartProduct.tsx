@@ -40,9 +40,8 @@ const CartProduct = ({ item }: cartProductsProps) => {
           <p className="text-lg font-semibold text-amazon_blue">{item.title}</p>
           <p className="text-sm text-gray-600 w-10/12">{item.description}</p>
           <p className="text-sm text-gray-600">
-            Unit Price{" "}
-            <span className="font-semibold text-amazon_blue">
-            </span>
+            {(item.price * item.quantity).toFixed(2)}
+            <span className="font-semibold text-amazon_blue"></span>
           </p>
           <div className="flex items-center gap-6">
             <div className="flex items-center mt-1 justify-between border border-gray-300 px-4 py-1 rounded-full w-28 shadow-lg shadow-gray-300">
@@ -94,12 +93,11 @@ const CartProduct = ({ item }: cartProductsProps) => {
               onClick={() => dispatch(deleteProduct(item._id))}
               className="absolute top-5 right-5 flex items-center text-sm font-medium text-gray-400 hover:text-red-600 cursor-pointer duration-300"
             >
-              <IoMdClose className="mt-[2px] text-2xl text-red-700"/> 
+              <IoMdClose className="mt-[2px] text-2xl text-red-700" />
             </div>
           </div>
         </div>
-        <div className="text-lg font-semibold text-amazon_blue">
-        </div>
+        <div className="text-lg font-semibold text-amazon_blue"></div>
       </div>
     </div>
   );
