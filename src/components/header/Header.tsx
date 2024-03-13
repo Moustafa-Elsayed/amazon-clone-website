@@ -14,7 +14,6 @@ import { useSession, signIn } from "next-auth/react";
 import { addUser } from "@/store/nextSlice";
 
 const Header = () => {
-  const { data: session } = useSession();
   const [allData, setAllData] = useState([]);
   const { productData, favoriteData, userInfo, allProducts } = useSelector(
     (state: stateProps) => state.next
@@ -23,17 +22,7 @@ const Header = () => {
   useEffect(() => {
     setAllData(allProducts.allProducts);
   }, [allProducts]);
-  useEffect(() => {
-    if (session) {
-      dispatch(
-        addUser({
-          name: session?.user?.name,
-          email: session?.user?.email,
-          image: session?.user?.image,
-        })
-      );
-    }
-  }, [session]);
+ 
   return (
     <div className="w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50">
       <div className="w-full h-full mx-auto inline-flex justify-between items-center gap-1 mdl:gap-4 px-4">
