@@ -40,7 +40,7 @@ const CartProduct = ({ item }: cartProductsProps) => {
           <p className="text-lg font-semibold text-amazon_blue">{item.title}</p>
           <p className="text-sm text-gray-600 w-10/12">{item.description}</p>
           <p className="text-sm text-gray-600">
-            {(item.price * item.quantity).toFixed(2)}
+          Unit Price : {(item.price * item.quantity).toFixed(2)}
             <span className="font-semibold text-amazon_blue"></span>
           </p>
           <div className="flex items-center gap-6">
