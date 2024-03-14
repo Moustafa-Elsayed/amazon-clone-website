@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import React, { useEffect, useState } from "react";
 import logo from "../../images/logo.png";
 import Image from "next/image";
@@ -14,7 +15,7 @@ import { addUser } from "@/store/nextSlice";
 import { UserButton, useUser } from "@clerk/nextjs";
 
 const Header = () => {
-  // const { user } = useUser();
+  const { user } = useUser();
   const [allData, setAllData] = useState([]);
   const { productData, favoriteData, userInfo, allProducts } = useSelector(
     (state: stateProps) => state.next
@@ -58,11 +59,12 @@ const Header = () => {
           </span>
         </div>
         {/* sign in */}
-        {productData ? (
-          // <UserButton afterSignOutUrl="/" />
-          <h1>jshljs</h1>
+        {user ? (
+          <UserButton afterSignOutUrl="/" />
         ) : (
-          <div className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1">
+          <div
+            className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1"
+          >
             <p>Hello , Sign in</p>
             <p className="flex justify-between items-center font-bold  text-white">
               Account , Lists
