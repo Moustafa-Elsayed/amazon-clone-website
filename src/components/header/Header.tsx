@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
 import React, { useEffect, useState } from "react";
 import logo from "../../images/logo.png";
 import Image from "next/image";
