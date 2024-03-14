@@ -4,9 +4,10 @@ import { StoreProduct, stateProps } from "../../type";
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useUser } from "@clerk/nextjs";
+import Link from "next/link";
 
 const CartPayment = () => {
-const { user } = useUser();
+  const { user } = useUser();
 
   const { productData, userInfo } = useSelector(
     (state: stateProps) => state.next
@@ -33,7 +34,7 @@ const { user } = useUser();
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ items: productData}),
+      body: JSON.stringify({ items: productData }),
     });
     const checkoutSession = await response.json();
 
@@ -77,6 +78,7 @@ const { user } = useUser();
           <p className="text-xs mt-1 text-red-500 font-semibold animate-bounce">
             Please login to continue
           </p>
+        
         </div>
       )}
     </div>

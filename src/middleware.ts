@@ -1,7 +1,7 @@
 import { authMiddleware } from "@clerk/nextjs";
 
 export default authMiddleware({
-  ignoredRoutes: ["/", "/favorite"],
+  ignoredRoutes: ["/", "/favorite","/cart" ],
 });
 
 export const config = {

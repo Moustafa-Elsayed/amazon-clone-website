@@ -10,8 +10,6 @@ import cartImage from "../../images/cartIcon.png";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { stateProps } from "../../../type";
-import { useSession, signIn } from "next-auth/react";
-import { addUser } from "@/store/nextSlice";
 import { UserButton, useUser } from "@clerk/nextjs";
 
 const Header = () => {
@@ -62,7 +60,8 @@ const Header = () => {
         {user ? (
           <UserButton afterSignOutUrl="/" />
         ) : (
-          <div
+          <Link
+          href={"/sign-in"}
             className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1"
           >
             <p>Hello , Sign in</p>
@@ -70,7 +69,7 @@ const Header = () => {
               Account , Lists
               <BiCaretDown />
             </p>
-          </div>
+          </Link>
         )}
 
         {/* favorite  */}
