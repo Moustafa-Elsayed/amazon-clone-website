@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { StoreProduct, stateProps } from "../../type";
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import { useSession } from "next-auth/react";
+import { useUser } from "@clerk/nextjs";
 
 const CartPayment = () => {
+const { user } = useUser();
+
   const { productData, userInfo } = useSelector(
     (state: stateProps) => state.next
   );
@@ -58,7 +60,7 @@ const CartPayment = () => {
         Total:{" "}
         <span className="font-bold text-xl">= {totalAmount.toFixed(2)}</span>
       </p>
-      {userInfo ? (
+      {user ? (
         <div className="flex flex-col items-center">
           <button
             onClick={handleCheckout}

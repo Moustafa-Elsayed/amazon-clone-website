@@ -62,8 +62,7 @@ const Header = () => {
         {user ? (
           <UserButton afterSignOutUrl="/" />
         ) : (
-          <Link
-          href={"/auth"}
+          <div
             className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1"
           >
             <p>Hello , Sign in</p>
@@ -71,7 +70,7 @@ const Header = () => {
               Account , Lists
               <BiCaretDown />
             </p>
-          </Link>
+          </div>
         )}
 
         {/* favorite  */}
