@@ -12,8 +12,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { stateProps } from "../../../type";
 import { useSession, signIn } from "next-auth/react";
 import { addUser } from "@/store/nextSlice";
+import { UserButton, useUser } from "@clerk/nextjs";
 
 const Header = () => {
+  const { user } = useUser();
   const [allData, setAllData] = useState([]);
   const { productData, favoriteData, userInfo, allProducts } = useSelector(
     (state: stateProps) => state.next
@@ -22,7 +24,7 @@ const Header = () => {
   useEffect(() => {
     setAllData(allProducts.allProducts);
   }, [allProducts]);
- 
+
   return (
     <div className="w-full h-20 bg-amazon_blue text-lightText sticky top-0 z-50">
       <div className="w-full h-full mx-auto inline-flex justify-between items-center gap-1 mdl:gap-4 px-4">
@@ -57,20 +59,11 @@ const Header = () => {
           </span>
         </div>
         {/* sign in */}
-        {userInfo ? (
-          <div className=" text-xs  px-2 border border-transparent  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1">
-            <img
-              src={userInfo.image}
-              alt="userImage"
-              className="w-8 h-8 rounded-full object-cover"
-            />
-            <p className="flex justify-between items-center font-bold  text-white">
-              {userInfo.name}
-            </p>
-          </div>
+        {user ? (
+          <UserButton afterSignOutUrl="/" />
         ) : (
-          <div
-            onClick={() => signIn()}
+          <Link
+          href={"/auth"}
             className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1"
           >
             <p>Hello , Sign in</p>
@@ -78,7 +71,7 @@ const Header = () => {
               Account , Lists
               <BiCaretDown />
             </p>
-          </div>
+          </Link>
         )}
 
         {/* favorite  */}
