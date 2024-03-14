@@ -14,7 +14,10 @@ export default function App({
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
-        <ClerkProvider {...pageProps}>
+        <ClerkProvider
+          publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+          {...pageProps}
+        >
           <div className="font-bodyFont bg-gray-300">
             <RootLayout>
               <Component {...pageProps} />
