@@ -56,11 +56,10 @@ const FavoriteProduct = ({ item }: cartProductsProps) => {
                     price: item.price,
                     title: item.title,
                     quantity: 1,
-
                   })
                 );
               }}
-              className="bg-black hover:bg-amazon_yellow hover:text-black duration-300 mt-2 text-white h-10 rounded-md font-medium"
+              className="bg-black hover:bg-amazon_yellow hover:text-black duration-300 mt-2 text-white h-10 rounded-md w-[20%] font-medium"
             >
               add to cart
             </button>
