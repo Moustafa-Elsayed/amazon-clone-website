@@ -1,4 +1,4 @@
-import { deleteFavorite } from "@/store/nextSlice";
+import { addToCart, deleteFavorite } from "@/store/nextSlice";
 import Image from "next/image";
 import React from "react";
 import { IoMdClose } from "react-icons/io";
@@ -42,6 +42,28 @@ const FavoriteProduct = ({ item }: cartProductsProps) => {
               Unit Price : ${item.price.toFixed(2)}
               <span className="font-semibold text-amazon_blue"></span>
             </p>
+            <button
+              onClick={() => {
+                dispatch(
+                  addToCart({
+                    _id: item._id,
+                    brand: item.brand,
+                    category: item.category,
+                    description: item.description,
+                    image: item.image,
+                    isNew: item.isNew,
+                    oldPrice: item.oldPrice,
+                    price: item.price,
+                    title: item.title,
+                    quantity: 1,
+
+                  })
+                );
+              }}
+              className="bg-black hover:bg-amazon_yellow hover:text-black duration-300 mt-2 text-white h-10 rounded-md font-medium"
+            >
+              add to cart
+            </button>
             <div className="flex items-center gap-6">
               <div className="absolute top-5 right-5 flex items-center text-sm font-medium text-gray-400 hover:text-red-600 cursor-pointer duration-300">
                 <IoMdClose

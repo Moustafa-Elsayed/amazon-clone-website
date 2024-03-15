@@ -18,7 +18,7 @@ const Favorite = () => {
           <div className="bg-white col-span-4 p-4 rounded-lg ">
             {favoriteData.map((item: StoreProduct) => (
               <div key={item._id}>
-                <FavoriteProduct item={item} />
+                <FavoriteProduct productData={productData} item={item} />
               </div>
             ))}
             <ResetFavorite />
