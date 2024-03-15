@@ -35,7 +35,17 @@ const Favorite = () => {
           </div>
         </div>
       ) : (
-        <h1>empty</h1>
+        <div  className="max-w-screen-2xl mx-auto px-6 grid grid-cols-2 gap-10 py-4">
+           <div className="bg-white h-64 col-span-4 flex flex-col items-center justify-center py-5 rounded-lg shadow-lg">
+          <h1 className="text-lg font-medium">Your Favorite List is empty!</h1>
+          <Link href={"/"}>
+            <button className="w-52 h-10 bg-amazon_blue text-white rounded-lg text-sm font-semibold hover:bg-amazon_yellow hover:text-black">
+              go to shopping
+            </button>
+          </Link>
+        </div>
+        </div>
+       
       )}
     </>
   );
