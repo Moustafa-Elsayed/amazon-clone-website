@@ -30,7 +30,6 @@ const CartProduct = ({ item }: cartProductsProps) => {
 
   return (
     <div 
-  
     className="bg-gray-100 rounded-lg  flex flex-col md:flex-row items-center gap-4 relative">
       <Image
         className="object-cover"
