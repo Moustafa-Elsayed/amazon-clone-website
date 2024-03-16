@@ -105,8 +105,8 @@ const DynamicPage = () => {
                     })
                   )
                 }
-                className="w-full md:w-96 h-12 bg-amazon_blue text-gray-200 hover:bg-amazon_yellow hover:text-amazon_blue duration-300 rounded-lg mt-5 text-base font-semibold"
-              >
+                className="bg-black hover:bg-amazon_yellow hover:text-black duration-300 mt-2 text-white h-10 rounded-md w-[40%] md:w-[20%] font-medium"
+                >
                 add to cart
               </button>
             </div>
