@@ -10,13 +10,14 @@ import { StoreProduct, stateProps } from "../../../type";
 import { useEffect, useState } from "react";
 import SearchProducts from "../SearchProducts";
 import { UserButton, useUser } from "@clerk/nextjs";
+import { IoMdClose } from "react-icons/io";
+import { tree } from "next/dist/build/templates/app-page";
 const Header = () => {
-  const {user}=useUser()
+  const { user } = useUser();
   const [allData, setAllData] = useState([]);
   const { productData, favoriteData, allProducts } = useSelector(
     (state: stateProps) => state.next
   );
-  console.log(productData);
 
   useEffect(() => {
     if (allProducts && allProducts.allProducts) {
@@ -73,43 +74,49 @@ const Header = () => {
           </span>
           {/* ========== Searchfield ========== */}
           {searchQuery && (
-            <div className="absolute left-0 top-12 w-full mx-auto max-h-96 bg-gray-200 rounded-lg overflow-y-scroll cursor-pointer text-black">
-              {filteredProducts.length > 0 ? (
-                <>
-                  {searchQuery &&
-                    filteredProducts.map((item: StoreProduct) => (
-                      <Link
-                        key={item._id}
-                        className="w-full border-b-[1px] border-b-gray-400 flex items-center gap-4"
-                        href={{
-                          pathname: `${item._id}`,
-                          query: {
-                            _id: item._id,
-                            brand: item.brand,
-                            category: item.category,
-                            description: item.description,
-                            image: item.image,
-                            isNew: item.isNew,
-                            oldPrice: item.oldPrice,
-                            price: item.price,
-                            title: item.title,
-                          },
-                        }}
-                        onClick={() => setSearchQuery("")}
-                      >
-                        <SearchProducts item={item} />
-                      </Link>
-                    ))}
-                </>
-              ) : (
-                <div className="bg-gray-50 flex items-center justify-center py-10 rounded-lg shadow-lg">
-                  <p className="text-xl font-semibold animate-bounce">
-                    Nothing is matches with your search keywords. Please try
-                    again!
-                  </p>
-                </div>
-              )}
-            </div>
+            <>
+              <div className="absolute left-0 top-12 w-full mx-auto max-h-96 bg-gray-200 rounded-lg overflow-y-scroll cursor-pointer text-black">
+                {/* <IoMdClose
+                  onClick={() => setSearchQuery(true)}
+                  className=" absolute top-0 right-0 mt-1 text-2xl text-red-700"
+                /> */}
+                {filteredProducts.length > 0 ? (
+                  <>
+                    {searchQuery &&
+                      filteredProducts.map((item: StoreProduct) => (
+                        <Link
+                          key={item._id}
+                          className="w-full border-b-[1px] border-b-gray-400 flex items-center gap-4"
+                          href={{
+                            pathname: `${item._id}`,
+                            query: {
+                              _id: item._id,
+                              brand: item.brand,
+                              category: item.category,
+                              description: item.description,
+                              image: item.image,
+                              isNew: item.isNew,
+                              oldPrice: item.oldPrice,
+                              price: item.price,
+                              title: item.title,
+                            },
+                          }}
+                          onClick={() => setSearchQuery("")}
+                        >
+                          <SearchProducts item={item} />
+                        </Link>
+                      ))}
+                  </>
+                ) : (
+                  <div className="bg-gray-50 flex items-center justify-center py-10 rounded-lg shadow-lg">
+                    <p className="text-xl font-semibold animate-bounce">
+                      Nothing is matches with your search keywords. Please try
+                      again!
+                    </p>
+                  </div>
+                )}
+              </div>
+            </>
           )}
           {/* ========== Searchfield ========== */}
         </div>
