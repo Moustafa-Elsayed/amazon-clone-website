@@ -25,19 +25,36 @@ const Products = ({ productData }: any) => {
           _id,
         }: productProps) => {
           return (
-            <Link
-            href={`/${_id}`}
+            <div
               key={_id}
               className="w-full bg-white text-black p-4 border border-gray-300 rounded-lg group overflow-hidden hover:border-[2px] hover:border-amazon_yellow scale-90 hover:scale-100 duration-300 "
             >
               <div className="w-full h-[260px] relative">
-                <Image
-                  className="w-full h-full object-cover scale-90 hover:scale-100 transition-transform duration-300"
-                  width={300}
-                  height={300}
-                  src={image}
-                  alt="productImage"
-                />
+                <Link
+                  href={{
+                    pathname: `/${_id}`,
+                    query: {
+                      _id: _id,
+                      brand: brand,
+                      category: category,
+                      description: description,
+                      image: image,
+                      isNew: isNew,
+                      oldPrice: oldPrice,
+                      price: price,
+                      title: title,
+                    },
+                  }}
+                >
+                  <Image
+                    className="w-full h-full object-cover scale-90 hover:scale-100 transition-transform duration-300"
+                    width={300}
+                    height={300}
+                    src={image}
+                    alt="productImage"
+                  />
+                </Link>
+
                 <div className="w-12 h-24 absolute bottom-10 right-0 border-[1px] border-gray-400 bg-white rounded-md flex flex-col translate-x-20 group-hover:translate-x-0 transition-transform duration-300">
                   <span className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300">
                     <FaShoppingCart />
@@ -108,7 +125,7 @@ const Products = ({ productData }: any) => {
                   add to cart
                 </button>
               </div>
-            </Link>
+            </div>
           );
         }
       )}
