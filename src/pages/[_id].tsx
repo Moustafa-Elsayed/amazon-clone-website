@@ -1,48 +1,42 @@
-import { addToCart } from "@/store/nextSlice";
+import { addToCart, addToFavorite } from "@/store/nextSlice";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { IoMdClose } from "react-icons/io";
+import { FaHeart } from "react-icons/fa";
+import { HiShoppingCart } from "react-icons/hi";
 import { useDispatch } from "react-redux";
+import { BeatLoader } from "react-spinners";
 
-const Dynamic = () => {
-  const dispatch = useDispatch();
-
-  const router = useRouter();
+const DynamicPage = () => {
   const [product, setProduct] = useState<any>({});
-
+  const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+  const dispatch = useDispatch();
   useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
     setProduct(router.query);
-  }, [router, setProduct]);
+  }, [router.query]);
   return (
-    <div className="max-w-screen-2xl mx-auto px-6 grid grid-cols-2 gap-10 py-4">
-      <div className="bg-white col-span-4  rounded-lg ">
-        <div className="bg-gray-100 rounded-lg flex flex-col md:flex-row items-center gap-6 relative overflow-hidden ">
-          <Image
-            src={product.image}
-            alt="kldf"
-            width={300}
-            height={700}
-            className=" bg-gray-500"
-          />
-          <div className="flex items-center px-2 gap-4">
-            <div className="flex flex-col gap-1">
-              <p className="text-lg font-semibold text-amazon_blue">
-                {product.title}
-              </p>
-              <p className="text-sm text-gray-600 w-10/12">
-                {product.description}
-              </p>
-              <p className="text-sm text-gray-600 ">
-                <span className="font-semibold text-amazon_blue line-through mr-2">
-                  ${product.oldPrice}
-                </span>
-                <span className="font-semibold text-amazon_blue ">
-                  ${product.price}
-                </span>
-              </p>
-              <button
-                onClick={() => {
+    <div className="max-w-screen-xl mx-auto px-4 py-4 md:py-10">
+      {isLoading ? (
+        <div className="w-full flex flex-col gap-6 items-center justify-center py-20">
+          <p>Your product is loading...</p>
+          <BeatLoader color="#131921" size={40} />
+        </div>
+      ) : (
+        <div className="w-full grid md:grid-cols-3 gap-3 bg-gray-100 rounded-lg">
+          <div className="flex items-center justify-center bg-gray-200 rounded-lg relative group overflow-hidden">
+            <Image
+              src={product.image}
+              alt="product image"
+              width={500}
+              height={500}
+            />
+            <div className="w-12 h-24 absolute bottom-10 right-0 border-[1px] border-gray-400 bg-white rounded-md flex flex-col translate-x-20 group-hover:-translate-x-2 transition-transform duration-300">
+              <span
+                onClick={() =>
                   dispatch(
                     addToCart({
                       _id: product._id,
@@ -55,24 +49,72 @@ const Dynamic = () => {
                       price: product.price,
                       title: product.title,
                       quantity: 1,
-                      
                     })
-                  );
-                }}
-                className="bg-black hover:bg-amazon_yellow hover:text-black duration-300 mt-2 text-white h-10 rounded-md w-[20%] font-medium"
+                  )
+                }
+                className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
+              >
+                <HiShoppingCart />
+              </span>
+              <span
+                onClick={() =>
+                  dispatch(
+                    addToFavorite({
+                      _id: product._id,
+                      brand: product.brand,
+                      category: product.category,
+                      description: product.description,
+                      image: product.image,
+                      isNew: product.isNew,
+                      oldPrice: product.oldPrice,
+                      price: product.price,
+                      title: product.title,
+                      quantity: 1,
+                    })
+                  )
+                }
+                className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
+              >
+                <FaHeart />
+              </span>
+            </div>
+          </div>
+          <div className="md:col-span-2 flex flex-col gap-3 justify-center p-4">
+            <p className="text-xs md:text-sm text-amazon_blue font-semibold -mb-3">
+              {product.category}_{product.brand}
+            </p>
+            <h1 className="text-xl md:text-3xl tracking-wide font-semibold">
+              {product.title}
+            </h1>
+            <p className="text-sm text-gray-600">{product.description}</p>
+            <div>
+              <button
+                onClick={() =>
+                  dispatch(
+                    addToCart({
+                      _id: product._id,
+                      brand: product.brand,
+                      category: product.category,
+                      description: product.description,
+                      image: product.image,
+                      isNew: product.isNew,
+                      oldPrice: product.oldPrice,
+                      price: product.price,
+                      title: product.title,
+                      quantity: 1,
+                    })
+                  )
+                }
+                className="w-full md:w-96 h-12 bg-amazon_blue text-gray-200 hover:bg-amazon_yellow hover:text-amazon_blue duration-300 rounded-lg mt-5 text-base font-semibold"
               >
                 add to cart
               </button>
-              <div className="flex items-center gap-6">
-                <div className="absolute top-5 right-5 flex items-center text-sm font-medium text-gray-400 hover:text-red-600 cursor-pointer duration-300"></div>
-              </div>
             </div>
-            <div className="text-lg font-semibold text-amazon_blue"></div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
 
-export default Dynamic;
+export default DynamicPage;
