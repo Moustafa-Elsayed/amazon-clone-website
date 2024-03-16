@@ -9,14 +9,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { StoreProduct, stateProps } from "../../../type";
 import { useEffect, useState } from "react";
 import SearchProducts from "../SearchProducts";
-import { UserButton } from "@clerk/nextjs";
-import { User } from "@clerk/nextjs/server";
+import { UserButton, useUser } from "@clerk/nextjs";
 const Header = () => {
+  const {User}=useUser()
   const [allData, setAllData] = useState([]);
   const { productData, favoriteData, allProducts } = useSelector(
     (state: stateProps) => state.next
   );
-console.log(productData);
+  console.log(productData);
 
   useEffect(() => {
     if (allProducts && allProducts.allProducts) {
