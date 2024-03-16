@@ -14,9 +14,7 @@ export default function App({
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor} loading={null}>
-        <ClerkProvider
-          {...pageProps}
-        >
+        <ClerkProvider {...pageProps}>
           <div className="font-bodyFont bg-gray-300">
             <RootLayout>
               <Component {...pageProps} />
