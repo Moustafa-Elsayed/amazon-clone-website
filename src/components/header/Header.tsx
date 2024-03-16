@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import SearchProducts from "../SearchProducts";
 import { UserButton, useUser } from "@clerk/nextjs";
 const Header = () => {
-  const {User}=useUser()
+  const {user}=useUser()
   const [allData, setAllData] = useState([]);
   const { productData, favoriteData, allProducts } = useSelector(
     (state: stateProps) => state.next
@@ -114,7 +114,7 @@ const Header = () => {
           {/* ========== Searchfield ========== */}
         </div>
         {/* sign in */}
-        {User ? (
+        {user ? (
           <UserButton afterSignOutUrl="/" />
         ) : (
           <Link
