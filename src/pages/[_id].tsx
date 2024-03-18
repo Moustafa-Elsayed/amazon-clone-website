@@ -19,14 +19,14 @@ const DynamicPage = () => {
     setProduct(router.query);
   }, [router.query]);
   return (
-    <div className="max-w-screen-xl mx-auto px-4 py-4 md:py-10">
+    <div className="max-w-screen-xl mx-auto px-4 py-4 md:py-10  ">
       {isLoading ? (
-        <div className="w-full flex flex-col gap-6 items-center justify-center py-20">
+        <div className="w-full flex flex-col gap-6 items-center justify-center py-20 ">
           <p>Your product is loading...</p>
           <BeatLoader color="#131921" size={40} />
         </div>
       ) : (
-        <div className="w-full grid md:grid-cols-3 gap-3 bg-gray-100 rounded-lg">
+        <div className="w-full grid md:grid-cols-3 gap-3 bg-gray-100 rounded-lg relative">
           <div className="flex items-center justify-center bg-gray-200 rounded-lg relative group overflow-hidden">
             <Image
               src={product.image}
@@ -87,8 +87,16 @@ const DynamicPage = () => {
               {product.title}
             </h1>
             <p className="text-sm text-gray-600">{product.description}</p>
-            <span></span>
-            <span>${product.price}</span>
+            <div className="flex flex-row gap-1 items-center ">
+              <span className="line-through text-gray-500">${product.oldPrice}</span>
+              <span>${product.price}</span>
+              {product.isNew && (
+                  <p className="absolute top-3 right-4 text-amazon_blue tracking-wide animate-bounce">
+                    !save $
+                    {!isNaN(product.oldPrice - product.price) && (product.oldPrice - product.price).toFixed(2)}
+                  </p>
+                )}
+            </div>
             <div>
               <button
                 onClick={() =>
@@ -108,7 +116,7 @@ const DynamicPage = () => {
                   )
                 }
                 className="bg-black hover:bg-amazon_yellow hover:text-black duration-300 mt-2 text-white h-10 rounded-md w-[40%] md:w-[20%] font-medium"
-                >
+              >
                 add to cart
               </button>
             </div>
