@@ -87,6 +87,8 @@ const DynamicPage = () => {
               {product.title}
             </h1>
             <p className="text-sm text-gray-600">{product.description}</p>
+            <span></span>
+            <span>${product.price}</span>
             <div>
               <button
                 onClick={() =>
