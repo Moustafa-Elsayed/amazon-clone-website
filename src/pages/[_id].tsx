@@ -7,7 +7,7 @@ import { HiShoppingCart } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 import { BeatLoader } from "react-spinners";
 
-const DynamicPage = ({ item }: cartProductsProps) => {
+const DynamicPage = () => {
   const [product, setProduct] = useState<any>({});
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
