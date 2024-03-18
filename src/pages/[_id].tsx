@@ -6,8 +6,23 @@ import { FaHeart } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 import { BeatLoader } from "react-spinners";
+interface Item {
+  brand: string;
+  category: string;
+  description: string;
+  image: string;
+  isNew: boolean;
+  oldPrice: number;
+  price: number;
+  title: string;
+  _id: number;
+  quantity: number;
+}
+interface cartProductsProps {
+  item: Item;
+}
 
-const DynamicPage = () => {
+const DynamicPage = ({ item }: cartProductsProps) => {
   const [product, setProduct] = useState<any>({});
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
@@ -36,22 +51,22 @@ const DynamicPage = () => {
             />
             <div className="w-12 h-24 absolute bottom-10 right-0 border-[1px] border-gray-400 bg-white rounded-md flex flex-col translate-x-20 group-hover:-translate-x-2 transition-transform duration-300">
               <span
-                onClick={() =>
-                  dispatch(
-                    addToCart({
-                      _id: product._id,
-                      brand: product.brand,
-                      category: product.category,
-                      description: product.description,
-                      image: product.image,
-                      isNew: product.isNew,
-                      oldPrice: product.oldPrice,
-                      price: product.price,
-                      title: product.title,
-                      quantity: 1,
-                    })
-                  )
-                }
+                  onClick={() => {
+                    dispatch(
+                      addToCart({
+                        _id: item._id,
+                        brand: item.brand,
+                        category: item.category,
+                        description: item.description,
+                        image: item.image,
+                        isNew: item.isNew,
+                        oldPrice: item.oldPrice,
+                        price: item.price,
+                        title: item.title,
+                        quantity: 1,
+                      })
+                    );
+                  }}
                 className="w-full h-full border-b-[1px] border-b-gray-400 flex items-center justify-center text-xl bg-transparent hover:bg-amazon_yellow cursor-pointer duration-300"
               >
                 <HiShoppingCart />
@@ -60,15 +75,15 @@ const DynamicPage = () => {
                 onClick={() =>
                   dispatch(
                     addToFavorite({
-                      _id: product._id,
-                      brand: product.brand,
-                      category: product.category,
-                      description: product.description,
-                      image: product.image,
-                      isNew: product.isNew,
-                      oldPrice: product.oldPrice,
-                      price: product.price,
-                      title: product.title,
+                      _id: item._id,
+                      brand: item.brand,
+                      category: item.category,
+                      description: item.description,
+                      image: item.image,
+                      isNew: item.isNew,
+                      oldPrice: item.oldPrice,
+                      price: item.price,
+                      title: item.title,
                       quantity: 1,
                     })
                   )
