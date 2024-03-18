@@ -6,21 +6,6 @@ import { FaHeart } from "react-icons/fa";
 import { HiShoppingCart } from "react-icons/hi";
 import { useDispatch } from "react-redux";
 import { BeatLoader } from "react-spinners";
-interface Item {
-  brand: string;
-  category: string;
-  description: string;
-  image: string;
-  isNew: boolean;
-  oldPrice: number;
-  price: number;
-  title: string;
-  _id: number;
-  quantity: number;
-}
-interface cartProductsProps {
-  item: Item;
-}
 
 const DynamicPage = ({ item }: cartProductsProps) => {
   const [product, setProduct] = useState<any>({});
@@ -54,15 +39,15 @@ const DynamicPage = ({ item }: cartProductsProps) => {
                   onClick={() => {
                     dispatch(
                       addToCart({
-                        _id: item._id,
-                        brand: item.brand,
-                        category: item.category,
-                        description: item.description,
-                        image: item.image,
-                        isNew: item.isNew,
-                        oldPrice: item.oldPrice,
-                        price: item.price,
-                        title: item.title,
+                        _id: product._id,
+                        brand: product.brand,
+                        category: product.category,
+                        description: product.description,
+                        image: product.image,
+                        isNew: product.isNew,
+                        oldPrice: product.oldPrice,
+                        price: product.price,
+                        title: product.title,
                         quantity: 1,
                       })
                     );
@@ -75,15 +60,15 @@ const DynamicPage = ({ item }: cartProductsProps) => {
                 onClick={() =>
                   dispatch(
                     addToFavorite({
-                      _id: item._id,
-                      brand: item.brand,
-                      category: item.category,
-                      description: item.description,
-                      image: item.image,
-                      isNew: item.isNew,
-                      oldPrice: item.oldPrice,
-                      price: item.price,
-                      title: item.title,
+                      _id: product._id,
+                      brand: product.brand,
+                      category: product.category,
+                      description: product.description,
+                      image: product.image,
+                      isNew: product.isNew,
+                      oldPrice: product.oldPrice,
+                      price: product.price,
+                      title: product.title,
                       quantity: 1,
                     })
                   )
