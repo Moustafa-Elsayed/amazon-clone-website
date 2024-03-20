@@ -126,7 +126,7 @@ const Header = () => {
         ) : (
           <Link
             href={"/sign-in"}
-            className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1"
+            className=" text-[8px] flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1"
           >
             <p>Hello , Sign in</p>
             <p className="flex justify-between items-center font-bold  text-white">
@@ -138,7 +138,7 @@ const Header = () => {
         {/* fovorite */}
         <Link
           href={"/favorite"}
-          className="text-xs text-gray-100 flex flex-col justify-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
+          className="text-[8px] text-gray-100 flex flex-col justify-center px-2 border border-transparent hover:border-white cursor-pointer duration-300 h-[70%] relative"
         >
           <p>Marked</p>
           <p className="text-white font-bold">& Favorite</p>
