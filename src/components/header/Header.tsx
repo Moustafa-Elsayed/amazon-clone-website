@@ -128,9 +128,9 @@ const Header = () => {
             href={"/sign-in"}
             className=" text-xs flex-col px-2 border border-transparent hover:border-white  items-center justify-center h-[70%] duration-300 cursor-pointer flex gap-1"
           >
-            <p>Hello , Sign in</p>
+            <p>Hello,Sign in</p>
             <p className="flex justify-between items-center font-bold  text-white">
-              Account , Lists
+              Account,Lists
               <BiCaretDown />
             </p>
           </Link>
