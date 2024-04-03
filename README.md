@@ -4,7 +4,7 @@
 
 <h2>🚀 Demo</h2>
 
-https://amazon-clone-git-master-moustafa-elsayeds-projects.vercel.app/
+https://amazon-clone-b43kipbyl-moustafa-elsayeds-projects.vercel.app/
 <h2>Project Screenshots:</h2>
 
 <img src="https://i.ibb.co/hWBtgQ9/amazon.png" alt="shields" width="800" height="400&quot;/">
