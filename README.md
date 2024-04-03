@@ -9,7 +9,7 @@ https://amazon-clone-b43kipbyl-moustafa-elsayeds-projects.vercel.app/
 
 <img src="https://i.ibb.co/hWBtgQ9/amazon.png" alt="shields" width="800" height="400&quot;/">
 
-
+ 
 <h2>🛠️ Installation Steps:</h2>
 
 <p>1. Clone the repository</p>
